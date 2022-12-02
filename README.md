@@ -1,4 +1,4 @@
-# Statistical-Language-Model-of-the-Mahabharata
+# Statistical-Language-Model-of-the-Ramayana
 
 In this project,  we build a Statistical Language Model using the public domain corpus of the Rāmāyana.
 The Rāmāyana is a Sanskrit epic composed by the poet Vālmīki around the 4th century BCE. Given the ancient origins of the text, we will use [Statistical Language Modelling](https://en.wikipedia.org/wiki/Language_model) to explore whether certain lines/passages of the modern corpus were interpolated or 'added in' by future authors later in history. 
