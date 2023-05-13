@@ -1,4 +1,4 @@
-# Statistical-Language-Model-of-the-Shakespear-Corpus
+# Statistical-Language-Model-of-the-Shakespeare-Corpus
 
 In this project,  we build a Statistical Language Model using the public domain corpus of William Shakespeare
 
