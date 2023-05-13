@@ -1,4 +1,4 @@
-# Statistical-Language-Model-of-the-Ramayana
+# Statistical-Language-Model-of-the-Shakespear-Corpus
 
 In this project,  we build a Statistical Language Model using the public domain corpus of William Shakespeare
 
