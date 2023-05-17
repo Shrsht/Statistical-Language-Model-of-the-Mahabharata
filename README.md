@@ -10,6 +10,12 @@ As with all statistical models, the true data generating process is never known 
 For example, one might guess that the probability of a sentence is simply the product of the empirical probabilities (i.e., the number of times a word is observed in a dataset divided by the number of words in that dataset). 
 This is one of the methods of estimating the probability of a sequence of words that we implement in this project. 
 
+## DESIRED OUTCOMES:
+Using the model developed in this project we attempt to deliver the following outcomes:
+
+* Determine the Probablity that a given line of text was written by WIlliam Shakespeare
+* Generatte a *unique*, but *grammatically correct* piece of text in the same style as William Shakespeare
+
 ## APPROACH
 
 We build 3 different models using the given corpus: 
@@ -24,8 +30,9 @@ A uniform language model is one in which each **unique** word is **equally likel
 
 Let's put into context what this means by using the following example corpus:
 
-py
+
 >>> corpus = 'when I eat pizza, I smile, but when I drink Coke, my stomach hurts'
+
 >>> tokenize(corpus)
 ['\x02', 'when', 'I', 'eat', 'pizza', ',', 'I', 'smile', ',', 'but', 'when', 'I', 'drink', 'Coke', ',', 'my', 'stomach', 'hurts', '\x03']
 
@@ -41,14 +48,15 @@ A unigram language model is one in which the **probability assigned to a token i
 
 Let's understand how probabilities are assigned to tokens using our example corpus from before.
 
-py
+
 >>> corpus = 'when I eat pizza, I smile, but when I drink Coke, my stomach hurts'
+
 >>> tokenize(corpus)
 ['\x02', 'when', 'I', 'eat', 'pizza', ',', 'I', 'smile', ',', 'but', 'when', 'I', 'drink', 'Coke', ',', 'my', 'stomach', 'hurts', '\x03']
 
 $$P(\text{when I drink Coke I smile}) = P(\text{when}) \cdot P(\text{I}) \cdot P(\text{drink}) \cdot P(\text{Coke}) \cdot P(\text{I}) \cdot P(\text{smile}) = \frac{2}{19} \cdot \frac{3}{19} \cdot \frac{1}{19} \cdot \frac{1}{19} \cdot \frac{3}{19} \cdot \frac{1}{19}$$
 
-### N-Gram Language Models
+### Model 3:  N-Gram Language Models
 
 Now we will build an N-Gram language model, in which the probability of a token appearing in a sentence **does depend** on the tokens that come before it. 
 
@@ -61,3 +69,8 @@ $$P(w_n|w_1,\ldots,w_{n-1}) = P(w_n|w_{n-(N-1)},\ldots,w_{n-1})$$
 To train an N-Gram model, we must compute a conditional probability for every $N$-token sequence in the corpus. For instance, suppose again that we are training a trigram model. Then, for every 3-token sequence $w_1, w_2, w_3$, we must compute $P(w_3 | w_1, w_2)$. To do so, we use:
 
 $$P(w_3 | w_1, w_2) = \frac{C(w_1, w_2, w_3)}{C(w_1, w_2)}$$
+
+## RESULTS:
+
+We notice that our **N Gram Model** performs the best when it comes to performance on our stated objectives. Especially when it comes to generating text in the style of Shakespeare, our model generates text with a much better grammatical correctness than the other 2 models. 
+
